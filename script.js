@@ -1,5 +1,4 @@
-// 1. Настройка даты ваших отношений (Год, Месяц - 1, День, Часы, Минуты)
-// Обрати внимание: Месяцы в JavaScript считаются с 0 (0 - Январь, 1 - Февраль и т.д.)
+
 const startDate = new Date(2024, 0, 1, 0, 0); 
 
 function updateTimer() {
@@ -22,7 +21,6 @@ function updateTimer() {
 setInterval(updateTimer, 1000);
 updateTimer();
 
-// 2. Генератор ежедневных комплиментов и пожеланий
 const wishes = [
     "Ты делаешь каждый мой день лучше просто тем, что ты есть! ❤️",
     "Улыбнись прямо сейчас, тебе это так идет! ✨",
@@ -46,7 +44,6 @@ document.getElementById('wish-btn').addEventListener('click', () => {
     }
 });
 
-// 3. Логика модального окна "Открой, когда..."
 function openNote(title, text) {
     document.getElementById('modal-title').innerText = title;
     document.getElementById('modal-body').innerText = text;
@@ -57,7 +54,6 @@ function closeNote() {
     document.getElementById('modal').style.display = 'none';
 }
 
-// Закрытие модального окна при клике вне его области
 window.addEventListener('click', (event) => {
     const modal = document.getElementById('modal');
     if (event.target === modal) {
@@ -65,7 +61,6 @@ window.addEventListener('click', (event) => {
     }
 });
 
-// 4. Управление музыкой
 const music = document.getElementById('bg-music');
 const musicBtn = document.getElementById('music-btn');
 
@@ -81,7 +76,6 @@ if (musicBtn && music) {
     });
 }
 
-// 5. Падающие сердечки на фоне
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
@@ -99,9 +93,9 @@ function createHeart() {
 
 setInterval(createHeart, 400);
 
-// 6. Интерактивные сердечки при клике в любом месте экрана
+
 document.addEventListener('click', function(e) {
-    // Игнорируем клики по кнопкам и интерактивным элементам, чтобы не спамить
+
     if (e.target.tagName === 'BUTTON' || e.target.classList.contains('note-box') || e.target.classList.contains('close-btn')) {
         return;
     }
