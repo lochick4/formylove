@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днём Рождения, Любимая Девочка! ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Подключение шрифтов Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Подключение библиотеки Canvas Confetti для салюта -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Фоновый контейнер для падающих сердечек -->
+    <div id="hearts-container"></div>
+
+    <!-- Аудио-плеер (скрытый) -->
+    <audio id="songsss" loop src="song.mp3"></audio>
+
+    <!-- Плавающая кнопка переключения музыки -->
+    <button id="music-btn" class="music-toggle-btn" title="Включить / Выключить музыку">🎵</button>
+
+    <div class="container">
+        
+        <!-- Шапка / Главное поздравление -->
+        <header class="hero glass">
+            <span class="badge">Happy Birthday! ✨</span>
+            <h1>С Днём Рождения, <span class="highlight">Моя Любимая!</span> 💕</h1>
+            <p class="subtitle">Ты — лучшее, что случалось со мной. Этот сайт создан специально для тебя!</p>
+            
+            <!-- Счётчик времени вместе -->
+            <div class="timer-card">
+                <h3>Мы счастливы вместе уже очень многа карочи)</h3>
+                <div id="timer">
+                    <div class="time-box"><span id="days">0</span><label>Дней</label></div>
+                    <div class="time-box"><span id="hours">0</span><label>Часов</label></div>
+                    <div class="time-box"><span id="minutes">0</span><label>Минут</label></div>
+                    <div class="time-box"><span id="seconds">0</span><label>Секунд</label></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Пожелание / Комплимент дня -->
+        <section class="card glass">
+            <h2>✨ Пожелание и комплимент дня</h2>
+            <p id="wish-text">Нажми на кнопку ниже, чтобы получить особенное послание!</p>
+            <button id="wish-btn" class="btn">Получить милость ❤️</button>
+        </section>
+
+        <!-- Галерея воспоминаний -->
+        <section class="card glass">
+            <h2>📸 Наши особенные моменты</h2>
+            <div class="gallery">
+                <div class="photo-card">
+                    <img src="images/photo1.jpg" alt="Наша первая прогулка">
+                    <p>Наша первая прогулка</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo3.jpg" alt="Твоя самая искренняя улыбка">
+                    <p>Твоя самая искренняя улыбка</p>
+                </div>
+                <div class="photo-card">
+                    <img src="images/photo2.jpg" alt="Незабываемый день вместе">
+                    <p>Незабываемый день вместе</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Записки "Открой, когда..." -->
+        <section class="card glass">
+            <h2>💌 Открой, когда...</h2>
+            <div class="notes-grid">
+                <div class="note-box" onclick="openNote('Тебе грустно', 'Помни, что я всегда рядом и безумно люблю тебя. Всё обязательно будет хорошо! 🫂')">
+                    📩 Тебе грустно
+                </div>
+                <div class="note-box" onclick="openNote('Ты скучаешь', 'Напиши мне прямо сейчас или позвони — я всегда жду твоего звонка! 📞❤️')">
+                    📩 Ты скучаешь
+                </div>
+                <div class="note-box" onclick="openNote('Нужна мотивация', 'Ты самая умная, сильная и талантливая. У тебя всё получится! ✨')">
+                    📩 Нужна мотивация
+                </div>
+                <div class="note-box" onclick="openNote('Хочешь улыбнуться', 'У тебя самая красивая улыбка во вселенной! Улыбнись прямо сейчас 😊')">
+                    📩 Хочешь улыбнуться
+                </div>
+            </div>
+        </section>
+
+        <!-- Модальное окно для записок -->
+        <div id="modal" class="modal">
+            <div class="modal-content glass">
+                <span class="close-btn" onclick="closeNote()">&times;</span>
+                <h3 id="modal-title"></h3>
+                <p id="modal-body"></p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Сделано с любовью навсегда ❤️</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
